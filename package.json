@@ -18,7 +18,9 @@
     "expo-splash-screen": "^31.0.13",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
+    "react-error-boundary": "^6.0.2",
     "react-native": "0.81.5",
+    "sentry-expo": "^7.2.0",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
