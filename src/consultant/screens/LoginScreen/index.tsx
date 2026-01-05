@@ -54,7 +54,7 @@ export const LoginScreen = () => {
       />
 
       <Button
-        variant="secondary"
+        variant="primary"
         size="large"
         loading={isLoading}
         onPress={handleLogin}

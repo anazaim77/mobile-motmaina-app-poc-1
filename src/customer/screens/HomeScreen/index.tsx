@@ -57,7 +57,7 @@ export const HomeScreen = () => {
           Welcome, {user?.name}
         </Text>
         <View style={styles.logoutButton}>
-          <Button variant="outline" size="small" onPress={handleLogout}>
+          <Button variant="primary" size="small" onPress={handleLogout}>
             Logout
           </Button>
         </View>

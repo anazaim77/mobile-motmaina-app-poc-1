@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  ActivityIndicator,
-} from "react-native";
+import { View, ScrollView, StyleSheet, ActivityIndicator } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { apiClient } from "@/shared/api/apiClient";
 import { Consultant } from "@/shared/api/mockServer";
@@ -54,7 +49,7 @@ export function ConsultantDetailScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Button variant="outline" size="small" onPress={() => router.back()}>
+        <Button variant="primary" size="small" onPress={() => router.back()}>
           ← Back
         </Button>
       </View>
@@ -124,6 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#007AFF",
     padding: 20,
     paddingTop: 60,
+    alignItems: "flex-start",
   },
   content: {
     padding: 20,
@@ -144,10 +140,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 8,
   },
-  rating: {
-  },
-  rate: {
-  },
+  rating: {},
+  rate: {},
   location: {
     marginBottom: 24,
   },
