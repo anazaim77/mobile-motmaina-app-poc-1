@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { View, TextInput, StyleSheet, Alert } from "react-native";
-import { router } from "expo-router";
 import { Text, Button } from "@/shared/components";
 import { useConsultantAuthStore } from "@/consultant/stores/authStore";
+import { consultantNavigate } from "@/consultant/config/navigation";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ export const LoginScreen = () => {
     setIsLoading(true);
     try {
       await login(email, password);
-      router.push("/(consultant)");
+      consultantNavigate.toHome();
     } catch (error) {
       Alert.alert("Login Failed", "Invalid credentials. Please try again.");
     } finally {

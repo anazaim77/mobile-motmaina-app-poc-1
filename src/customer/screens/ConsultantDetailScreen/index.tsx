@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { View, ScrollView, StyleSheet, ActivityIndicator } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import { apiClient } from "@/shared/api/apiClient";
 import { Consultant } from "@/shared/api/mockServer";
 import { Text } from "@/shared/components/Text";
 import { Button } from "@/shared/components/Button";
+import { customerNavigate } from "@/customer/config/navigation";
 
 export function ConsultantDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const router = useRouter();
   const [consultant, setConsultant] = useState<Consultant | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +49,7 @@ export function ConsultantDetailScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Button variant="primary" size="small" onPress={() => router.back()}>
+        <Button variant="primary" size="small" onPress={customerNavigate.back}>
           ← Back
         </Button>
       </View>

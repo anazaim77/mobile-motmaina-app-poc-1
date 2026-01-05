@@ -6,15 +6,14 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from "react-native";
-import { useRouter } from "expo-router";
 import { Text, Button } from "@/shared/components";
 import { apiClient } from "@/shared/api/apiClient";
 import { Consultant } from "@/shared/api/mockServer";
 import { useCustomerAuthStore } from "@/customer/stores/authStore";
 import { ConsultantCard } from "@/customer/components/ConsultantCard";
+import { customerNavigate } from "@/customer/config/navigation";
 
 export const HomeScreen = () => {
-  const router = useRouter();
   const { user, logout } = useCustomerAuthStore();
   const [consultants, setConsultants] = useState<Consultant[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -85,7 +84,7 @@ export const HomeScreen = () => {
           renderItem={({ item }) => (
             <ConsultantCard
               consultant={item}
-              onPress={() => router.push(`/(customer)/consultants/${item.id}`)}
+              onPress={() => customerNavigate.toConsultantDetail(item.id)}
             />
           )}
         />
