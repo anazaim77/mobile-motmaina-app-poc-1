@@ -169,6 +169,25 @@ Each variant has its own:
 - Bundle identifier/package name
 - App icon and splash screen
 
+### Bundle Identifiers
+
+The app generates unique bundle identifiers for each variant and environment:
+
+| Variant    | Environment | iOS Bundle Identifier          | Android Package Name           | App Name                      |
+|------------|-------------|--------------------------------|--------------------------------|-------------------------------|
+| Customer   | Staging     | `com.motmaina.customer.staging` | `com.motmaina.customer.staging` | Motmaina Customer (Staging)   |
+| Customer   | Production  | `com.motmaina.customer`        | `com.motmaina.customer`        | Motmaina Customer             |
+| Consultant | Staging     | `com.motmaina.consultant.staging` | `com.motmaina.consultant.staging` | Motmaina Consultant (Staging) |
+| Consultant | Production  | `com.motmaina.consultant`      | `com.motmaina.consultant`      | Motmaina Consultant           |
+
+**Pattern:**
+- Base: `com.motmaina`
+- Variant suffix: `.customer` or `.consultant`
+- Environment suffix: `.staging` (production has no suffix)
+- Full identifier: `com.motmaina.{variant}{.staging}`
+
+This allows all 4 apps to be installed simultaneously on the same device without conflicts.
+
 ## Features Implemented
 
 ### Customer App
