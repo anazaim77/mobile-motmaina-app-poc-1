@@ -1,11 +1,11 @@
  import React from "react";
  import {
    Pressable,
-   Text,
    StyleSheet,
    PressableProps,
    ActivityIndicator,
  } from "react-native";
+import { Text as SharedText } from "./Text";
  
  type ButtonVariant = "primary" | "secondary" | "outline";
  type ButtonSize = "small" | "medium" | "large";
@@ -44,7 +44,7 @@
            color={variant === "primary" ? "#fff" : "#007AFF"}
          />
        ) : (
-         <Text
+        <SharedText
            style={[
              styles.text,
              styles[`${variant}Text`],
@@ -52,7 +52,7 @@
            ]}
          >
            {children}
-         </Text>
+        </SharedText>
        )}
      </Pressable>
    );

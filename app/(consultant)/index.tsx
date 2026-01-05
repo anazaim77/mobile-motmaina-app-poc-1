@@ -1,3 +1,3 @@
-import { HomeScreen } from "@/consultant/screens/HomeScreen";
+import { HomeScreen } from "@/consultant/screens";
 
 export default HomeScreen;

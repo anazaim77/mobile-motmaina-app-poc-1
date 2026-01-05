@@ -1,3 +1,3 @@
-import { LoginScreen } from "@/consultant/screens/LoginScreen";
+import { LoginScreen } from "@/consultant/screens";
 
 export default LoginScreen;
