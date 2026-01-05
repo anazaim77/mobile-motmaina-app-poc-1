@@ -1,0 +1,49 @@
+ {
+   "cli": {
+     "version": ">= 14.1.3"
+   },
+   "build": {
+     "customer-staging": {
+       "env": {
+         "APP_VARIANT": "customer",
+         "APP_ENV": "staging"
+       },
+       "android": {
+         "buildType": "apk"
+       },
+       "ios": {
+         "simulator": true
+       }
+     },
+     "customer-production": {
+       "env": {
+         "APP_VARIANT": "customer",
+         "APP_ENV": "production"
+       },
+       "android": {
+         "buildType": "apk"
+       }
+     },
+     "consultant-staging": {
+       "env": {
+         "APP_VARIANT": "consultant",
+         "APP_ENV": "staging"
+       },
+       "android": {
+         "buildType": "apk"
+       },
+       "ios": {
+         "simulator": true
+       }
+     },
+     "consultant-production": {
+       "env": {
+         "APP_VARIANT": "consultant",
+         "APP_ENV": "production"
+       },
+       "android": {
+         "buildType": "apk"
+       }
+     }
+   }
+ }
