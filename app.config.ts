@@ -42,6 +42,8 @@
    icon: iconPath,
    userInterfaceStyle: "light",
    newArchEnabled: true,
+  scheme: "motmaina",
+  plugins: ["expo-router"],
    splash: {
      image: splashPath,
      resizeMode: "contain",
