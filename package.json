@@ -2,11 +2,28 @@
   "name": "mobile-motmaina-app-poc-1",
   "version": "1.0.0",
   "main": "expo-router/entry",
+  "private": true,
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
+    "start:customer": "APP_VARIANT=customer APP_ENV=staging expo start --clear",
+    "start:consultant": "APP_VARIANT=consultant APP_ENV=staging expo start --clear",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "ios:customer": "APP_VARIANT=customer APP_ENV=staging expo start --ios --clear",
+    "ios:consultant": "APP_VARIANT=consultant APP_ENV=staging expo start --ios --clear",
+    "android": "expo start --android",
+    "android:customer": "APP_VARIANT=customer APP_ENV=staging expo start --android --clear",
+    "android:consultant": "APP_VARIANT=consultant APP_ENV=staging expo start --android --clear",
+    "web": "expo start --web",
+    "build:ios:customer:staging": "eas build --profile customer-staging --platform ios --local",
+    "build:ios:customer:prod": "eas build --profile customer-production --platform ios --local",
+    "build:ios:consultant:staging": "eas build --profile consultant-staging --platform ios --local",
+    "build:ios:consultant:prod": "eas build --profile consultant-production --platform ios --local",
+    "build:android:customer:staging": "eas build --profile customer-staging --platform android --local",
+    "build:android:customer:prod": "eas build --profile customer-production --platform android --local",
+    "build:android:consultant:staging": "eas build --profile consultant-staging --platform android --local",
+    "build:android:consultant:prod": "eas build --profile consultant-production --platform android --local",
+    "typecheck": "tsc --noEmit",
+    "lint": "expo lint"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.2",
@@ -31,8 +48,8 @@
     "@types/react": "~19.1.0",
     "axios-mock-adapter": "^2.1.0",
     "babel-plugin-module-resolver": "^5.0.2",
+    "babel-preset-expo": "^54.0.9",
     "dotenv": "^17.2.3",
     "typescript": "~5.9.2"
-  },
-  "private": true
+  }
 }
